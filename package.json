@@ -26,12 +26,18 @@
   ],
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "node --test test/core.test.ts test/messaging.test.ts"
+    "test": "node --test test/core.test.ts test/messaging.test.ts",
+    "example": "vite --config examples/vite.config.js",
+    "example:build": "vite build --config examples/vite.config.js"
   },
   "peerDependencies": {
     "@sysce/stomp": ">=4.2.0-0"
   },
   "devDependencies": {
-    "typescript": "~7.0.2"
+    "@mercuryworkshop/epoxy-transport": "^3.0.2",
+    "@mercuryworkshop/wisp-js": "^0.5.3",
+    "@sysce/stomp": "4.2.0-nightly.202611111511.g95abb9f",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.7"
   }
 }

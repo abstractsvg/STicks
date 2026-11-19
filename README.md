@@ -146,6 +146,29 @@ STomp's `onNavigate`).
 - **Not supported:** `captureVisibleTab`, side panels and incognito. There is
   only one window.
 
+## Example
+
+`examples/basic` is a small working browser: tabs, an address bar, an
+extension toolbar with badges and self-sizing popups, and an extension
+manager (install from a Web Store link or ID, or a .crx/.zip; turn
+extensions on and off, remove them, open their options).
+`examples/vite.config.js` serves STomp's `dist/` at `/stomp/`, `static/` at
+`/sticks/` and a [wisp-js](https://github.com/MercuryWorkshop/wisp-server-node)
+relay at `/wisp/`, so nothing else has to run.
+
+```sh
+npm install
+npm run example        # http://localhost:5173
+```
+
+Try `ddkjiahejlhfcafbddmgiahcphecmpfh` (uBlock Origin Lite) in the manager.
+`examples/basic/main.js` is the part to copy into your own host. It covers:
+
+- the `host` bindings
+- the `StompController` options STicks needs: `hooks`, `onRequest`, `onNavigate`, `onOpen`
+- opening extension URLs in plain iframes
+- the toolbar and popup sizing
+
 ## Development
 
 ```sh

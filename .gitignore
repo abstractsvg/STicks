@@ -2,3 +2,5 @@ node_modules
 *.log
 .DS_Store
 test/fixtures
+examples/basic/public
+examples/dist

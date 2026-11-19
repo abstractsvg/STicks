@@ -1,0 +1,257 @@
+:root {
+  color-scheme: dark;
+  --bg: #111214;
+  --raised: #1d1f22;
+  --line: #2c2f33;
+  --text: #e6e8ea;
+  --muted: #9aa0a6;
+  font-family: system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--raised);
+  cursor: pointer;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+}
+
+.toolbar > button {
+  height: 34px;
+  min-width: 34px;
+  padding: 0 10px;
+}
+
+#address-form {
+  flex: 1;
+}
+
+#address {
+  width: 100%;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--raised);
+  outline: none;
+}
+
+#address:focus {
+  border-color: #6b7280;
+}
+
+.extensions {
+  display: flex;
+  gap: 4px;
+}
+
+.ext {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-color: transparent;
+  background: none;
+}
+
+.ext:hover {
+  background: var(--raised);
+}
+
+.ext img {
+  width: 18px;
+  height: 18px;
+}
+
+.badge {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  min-width: 14px;
+  padding: 0 3px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 8px 6px;
+  overflow-x: auto;
+}
+
+#tab-list {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tab {
+  display: flex;
+  max-width: 220px;
+  border-radius: 8px;
+}
+
+.tab button {
+  border: none;
+  background: none;
+}
+
+.tab > button:first-child {
+  overflow: hidden;
+  padding: 6px 4px 6px 10px;
+  color: var(--muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab.active {
+  background: var(--raised);
+}
+
+.tab.active > button:first-child {
+  color: var(--text);
+}
+
+.tab .close {
+  padding: 0 8px;
+  color: var(--muted);
+}
+
+#new-tab {
+  width: 30px;
+}
+
+#pages {
+  position: relative;
+  border-top: 1px solid var(--line);
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+.popup {
+  position: fixed;
+  z-index: 10;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.popup iframe {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: none;
+}
+
+dialog {
+  width: min(560px, calc(100% - 32px));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#install-store {
+  display: flex;
+  gap: 8px;
+}
+
+#install-store input {
+  flex: 1;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--raised);
+}
+
+#install-store button,
+dialog form[method='dialog'] button,
+#installed button {
+  padding: 6px 12px;
+}
+
+.file {
+  display: block;
+  margin: 12px 0;
+  color: var(--muted);
+}
+
+#installed {
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+#installed li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#installed li span {
+  flex: 1;
+}
+
+.stats,
+#install-status {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  max-width: 360px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--raised);
+}
