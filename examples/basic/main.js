@@ -113,6 +113,7 @@ function activate(id) {
   for (const tab of tabs.values()) tab.iframe.hidden = tab.id !== id
   sticks.tabActivated(id)
   render()
+  $('#tab-list .active')?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
 }
 
 function closeTab(id) {
